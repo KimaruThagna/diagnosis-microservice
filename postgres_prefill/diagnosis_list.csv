@@ -1,0 +1,6 @@
+diagnosis,visiting_patient,consulting_doctor
+Patient seems to have developed symptoms similar to Cholera,{'patient_number':''},{'license_number':''}
+Patient seems to have developed symptoms similar to Typhoid,{'patient_number':''},{'license_number':''}
+Patient seems to have no severe symptoms,{'patient_number':''},{'license_number':''}
+Patient seems to have developed symptoms similar to Pneumonia,{'patient_number':''},{'license_number':''}
+Patient seems to have fully recovered,{'patient_number':''},{'license_number':''}
