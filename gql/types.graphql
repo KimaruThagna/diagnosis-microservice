@@ -3,6 +3,7 @@ scalar DateTime
 
 type Diagnosis
 {
+    uid: ID!
     diagnosis: String!
     consulting_doctor: Doctor @provides(fields: "license_number")
     visiting_patient: Patient @provides(fields: "patient_number")
@@ -19,5 +20,5 @@ type Patient @key(fields: "patient_number") @extends {
 
 type Doctor @key(fields: "license_number") @extends {
     license_number: String! @external
-    diagnosis: Diagnosis
+    diagnosis: [Diagnosis]
 }
