@@ -1,10 +1,10 @@
 from ariadne import convert_kwargs_to_snake_case
-from patient.models import Patient
+from diagnosis.models import Diagnosis
 from django.db import transaction
 
-class PatientsMutations:
+class DiagnosisMutations:
     """
-    Mutation methods to perform creation updates and deletion in the Patients model
+    Mutation methods to perform creation updates and deletion in the Diagnosiss model
     """
 
     def __init__(self):
@@ -18,7 +18,7 @@ class PatientsMutations:
 
                 return dict(
                 status=True,
-                object=Patient.objects.create(**creation_input)
+                object=Diagnosis.objects.create(**creation_input)
                 )
         except Exception as e:
             return dict(status=False, error=f'An error occurred {e}')
@@ -29,11 +29,11 @@ class PatientsMutations:
 
         try:
             with transaction.atomic():
-                patient = Patient.objects.get(uid=update_input.get("uid"))
-                Patient.objects.filter(uid=update_input.pop("uid")).update(**update_input)
+                diagnosis = Diagnosis.objects.get(uid=update_input.get("uid"))
+                Diagnosis.objects.filter(uid=update_input.pop("uid")).update(**update_input)
                 return dict(
                     status=True,
-                    object=patient
+                    object=diagnosis
                 )
         except Exception as e:
             return dict(status=False, error=f'An error occurred {e}')
@@ -45,7 +45,7 @@ class PatientsMutations:
 
         try:
             with transaction.atomic():
-                record = Patient.objects.get(uid=uid)
+                record = Diagnosis.objects.get(uid=uid)
                 record.soft_delete()
                 return dict(
                     status=True,
@@ -63,7 +63,7 @@ class PatientsMutations:
 
         try:
             with transaction.atomic():
-                record = Patient.objects.get(uid=uid)
+                record = Diagnosis.objects.get(uid=uid)
                 record.activate()
                 return dict(
                     status=True,
@@ -81,7 +81,7 @@ class PatientsMutations:
 
         try:
             with transaction.atomic():
-                record = Patient.objects.get(uid=uid)
+                record = Diagnosis.objects.get(uid=uid)
                 record.deactivate()
                 return dict(
                     status=True,
