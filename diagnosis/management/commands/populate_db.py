@@ -12,7 +12,7 @@ def prefill_diagnosis(filename):
     try:
         for record in patients_records:
             Diagnosis.objects.create(**record)
-            print(f'added patients record for {record["last_name"]}')
+            print(f'added diagnosis record')
     except Exception as e:
         print(f"DB prefill process failed due to {e}")
 
