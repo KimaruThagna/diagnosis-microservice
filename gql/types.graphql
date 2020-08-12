@@ -14,10 +14,10 @@ type Diagnosis
 
 type Patient @key(fields: "patient_number") @extends {
     patient_number: String! @external
-    diagnosis: String
+    diagnosis: [Diagnosis]
 }
 
 type Doctor @key(fields: "license_number") @extends {
     license_number: String! @external
-    diagnosis: String
+    diagnosis: Diagnosis
 }
