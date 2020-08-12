@@ -1,9 +1,9 @@
 type Mutation {
 
-    createPatient(creation_input: patientCreationInput!): SingleObjectPayload!
-    updatePatient(update_input: patientUpdateInput!): SingleObjectPayload!
-    deletePatient(uid:ID!): StatusPayload!
-    activatePatient(uid:ID!): StatusPayload!
-    deactivatePatient(uid:ID!): StatusPayload!
+    createDiagnosis(creation_input: diagnosisCreationInput!): SingleObjectPayload!
+    updateDiagnosis(update_input: diagnosisUpdateInput!): SingleObjectPayload!
+    deleteDiagnosis(uid:ID!): StatusPayload!
+    archiveDiagnosis(uid:ID!): StatusPayload!
+    unarchiveDiagnosis(uid:ID!): StatusPayload!
 
 }
