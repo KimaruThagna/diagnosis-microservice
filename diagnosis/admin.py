@@ -4,7 +4,7 @@ from .models import Diagnosis
 
 # Register your models here.
 class DiagnosisAdmin(admin.ModelAdmin):
-    list_display = ("notes")
+    list_display = ("diagnosis")
 
     class Meta:
         model = Diagnosis
