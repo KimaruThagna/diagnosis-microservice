@@ -27,11 +27,12 @@ def resolve_diagnosis(obj, *_):
 
 @diagnosis_federated_object.field("consulting_doctor")
 def resolve_consulting_doctor(obj, *_):
-    return {"id":obj.consulting_doctor}
+    return {"__typename": "Doctor", "license_number": obj["consulting_doctor"]["license_number"]}
+
 
 @diagnosis_federated_object.field("visiting_patient")
 def resolve_visiting_patient(obj, *_):
-    return {"id":obj.visiting_patient}
+    return {"__typename": "Patient", "patient_number": obj["visiting_patient"]["patient_number"]}
 
 @doctor_federated_object.field("diagnosis")
 def resolve_doctor_diagnosis(obj, *_):
