@@ -36,7 +36,7 @@ def resolve_visiting_patient(obj, *_):
 
 @doctor_federated_object.field("diagnosis")
 def resolve_doctor_diagnosis(obj, *_):
-    return Diagnosis.objects.filter(consulting_doctor__license_number=obj.diagnosis)
+    return Diagnosis.objects.filter(consulting_doctor__license_number=obj.consulting_doctor)
 
 @patient_federated_object.field("diagnosis")
 def resolve_patient_diagnosis(obj, *_):
