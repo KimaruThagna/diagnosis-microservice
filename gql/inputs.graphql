@@ -1,7 +1,7 @@
 input diagnosisCreationInput {
     diagnosis: String!
-    visiting_patient: Patient
-    consulting_doctor: Doctor
+    visiting_patient: String
+    consulting_doctor: String
 }
 
 input diagnosisUpdateInput {

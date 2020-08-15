@@ -23,7 +23,7 @@ services:
       - static_volume:/home/app/microservice/static
     env_file:
       - .env
-    image: doctors_microservice
+    image: diagnosis_microservice
 
     expose:
       - ${APP_PORT}

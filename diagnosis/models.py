@@ -4,8 +4,8 @@ from django.contrib.postgres.fields import ArrayField, JSONField
 
 class Diagnosis(models.Model):
     diagnosis = models.TextField(max_length=2000)
-    consulting_doctor = ArrayField(JSONField(), size=5)
-    visiting_patient = ArrayField(JSONField(), size=5)
+    consulting_doctor = JSONField()
+    visiting_patient = JSONField()
 
     def __str__(self):
         return self.diagnosis
